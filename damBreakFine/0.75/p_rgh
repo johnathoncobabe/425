@@ -1,0 +1,152 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.4.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0.75";
+    object      p_rgh;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [1 -1 -2 0 0 0 0];
+
+internalField   uniform 0;
+
+boundaryField
+{
+    leftWall
+    {
+        type            fixedFluxPressure;
+        gradient        uniform 0;
+        value           uniform 0;
+    }
+    rightWall
+    {
+        type            fixedFluxPressure;
+        gradient        uniform 0;
+        value           uniform 0;
+    }
+    lowerWall
+    {
+        type            fixedFluxPressure;
+        gradient        uniform 0;
+        value           uniform 0;
+    }
+    atmosphere
+    {
+        type            totalPressure;
+        rho             rho;
+        psi             none;
+        gamma           1;
+        p0              uniform 0;
+        value           nonuniform List<scalar> 
+90
+(
+-9.46605e-65
+-2.85039e-66
+-7.72494e-68
+-9.87885e-70
+-1.38269e-71
+-1.4971e-73
+-1.69608e-75
+-1.63063e-77
+-1.52832e-79
+-1.26134e-81
+-9.8863e-84
+-7.00896e-86
+-4.69064e-88
+-2.89133e-90
+-1.68279e-92
+-9.13053e-95
+-4.68831e-97
+-2.26326e-99
+-1.03694e-101
+-4.49434e-104
+-1.85301e-106
+-6.44478e-109
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+-1.11926e-160
+)
+;
+    }
+    defaultFaces
+    {
+        type            empty;
+    }
+}
+
+
+// ************************************************************************* //
